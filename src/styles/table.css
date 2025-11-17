@@ -1,0 +1,229 @@
+/* -------- Card + layout shell -------- */
+
+.table-card {
+  margin-top: 16px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04);
+}
+
+.table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* scroll container for table */
+.table-wrapper {
+  max-height: 420px;
+  overflow: auto;
+  border-radius: 0 0 12px 12px;
+}
+
+/* Optional: smooth, subtle scrollbar */
+.table-wrapper::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 999px;
+}
+
+/* -------- Table base styles -------- */
+
+.analytics-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  color: #111827;
+  table-layout: fixed;
+}
+
+.analytics-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.analytics-table thead tr {
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.analytics-table th,
+.analytics-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* header cells */
+
+.th-category {
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.th-numeric {
+  text-align: right;
+  font-weight: 500;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.th-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.th-button:hover .th-sort-indicator {
+  opacity: 1;
+}
+
+.th-sort-indicator {
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+/* numeric cells */
+
+.td-numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* center-cell (loading / empty states) */
+
+.td-center {
+  text-align: center;
+  padding: 16px 12px;
+  color: #6b7280;
+}
+
+/* -------- Region + channel hierarchy -------- */
+
+.category-cell {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.region-row {
+  background-color: #f9fafb;
+  font-weight: 500;
+}
+
+.region-row:hover {
+  background-color: #f3f4f6;
+}
+
+.region-cell {
+  padding-left: 12px;
+}
+
+.region-toggle {
+  border: none;
+  background: none;
+  padding: 0 4px 0 0;
+  cursor: pointer;
+  font-size: 11px;
+  color: #6b7280;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* channel row indentation + tree lines */
+
+.channel-row .category-cell {
+  position: relative;
+  padding-left: 32px;
+}
+
+.channel-row .tree-line-vert {
+  position: absolute;
+  left: 14px;
+  top: 2px;
+  bottom: 2px;
+  width: 1px;
+  background-color: #e5e7eb;
+  content: "";
+}
+
+.channel-row .tree-line-horiz {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  width: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  content: "";
+}
+
+.channel-row:hover {
+  background-color: #f3f4ff;
+}
+
+/* -------- Total row -------- */
+
+.total-row {
+  background-color: #f3f4f6;
+  font-weight: 600;
+}
+
+.total-row td {
+  border-top: 1px solid #d1d5db;
+}
+
+.total-cell {
+  padding-left: 12px;
+}
+
+/* -------- Small-screen tweaks -------- */
+
+@media (max-width: 768px) {
+  .table-card {
+    margin-top: 12px;
+    border-radius: 10px;
+  }
+
+  .table-header {
+    padding: 10px 12px;
+  }
+
+  .analytics-table th,
+  .analytics-table td {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .table-wrapper {
+    max-height: 360px;
+  }
+}
