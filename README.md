@@ -298,5 +298,3 @@ pnpm preview
   - Aggregated by channel
   - Limited to top N channels
 - The table is **grouped by region** and then by **channel**, which matches the provided sample UI while still honouring pagination and performance concerns.
-
-You can extend this README with Lighthouse results, architecture diagrams, or screenshots if the reviewer likes more visual context.
